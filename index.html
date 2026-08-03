@@ -67,23 +67,18 @@
         .project-card {
             background: white;
             border-radius: 8px;
-            padding: 0; /* Ajuste para que la imagen cubra todo el ancho superior */
+            padding: 0; 
             margin-bottom: 2rem;
             box-shadow: var(--shadow);
-            overflow: hidden; /* Mantiene las esquinas de la imagen redondeadas */
+            overflow: hidden; 
             border-left: 4px solid var(--primary);
         }
         .project-image {
             width: 100%;
-            height: 250px; /* Altura sugerida para capturas */
-            
-            /* ¡ESTA ES LA CORRECCIÓN CLAVE! */
+            height: 250px; 
             object-fit: contain; /* Ajusta la imagen entera sin recortar */
-            
             display: block;
             border-bottom: 1px solid #ddd;
-            
-            /* Fondo oscuro para que la captura oscura no resalte si hay espacio */
             background-color: #111; 
         }
         .project-content {
@@ -165,9 +160,9 @@
     </header>
 
     <div class="container">
-        <h2 class="section-title">Soluciones Implementadas</h2>
+        <h2 class="section-title">Solución Implementada</h2>
 
-        <!-- Proyecto 1 -->
+        <!-- Proyecto: Gimnasio -->
         <div class="project-card">
             <!-- REEMPLAZA ESTA IMAGEN CON TU CAPTURA -->
             <img src="img/gym-app.png" alt="Captura de pantalla de la interfaz de gestión de socios, resaltada en amarillo y negro" class="project-image">
