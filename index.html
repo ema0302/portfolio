@@ -6,10 +6,11 @@
     <title>Ema | Soluciones de Software</title>
     <style>
         :root {
-            --primary: #FFCC00; /* Tono amarillo para mantener la identidad de tu app */
+            --primary: #FFCC00; /* Tono amarillo característico */
             --dark: #1A1A1A;
             --light: #F4F4F4;
             --text-gray: #666;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         * {
             margin: 0;
@@ -66,10 +67,21 @@
         .project-card {
             background: white;
             border-radius: 8px;
-            padding: 2rem;
+            padding: 0; /* Ajuste para que la imagen cubra todo el ancho superior */
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
+            overflow: hidden; /* Mantiene las esquinas de la imagen redondeadas */
             border-left: 4px solid var(--primary);
+        }
+        .project-image {
+            width: 100%;
+            height: 250px; /* Altura sugerida para capturas */
+            object-fit: cover; /* Ajusta la imagen sin deformarla */
+            display: block;
+            border-bottom: 1px solid #ddd;
+        }
+        .project-content {
+            padding: 2rem;
         }
         .project-title {
             font-size: 1.5rem;
@@ -109,6 +121,7 @@
             padding: 3rem;
             background: var(--primary);
             border-radius: 8px;
+            box-shadow: var(--shadow);
         }
         .cta-section h2 {
             margin-bottom: 1rem;
@@ -150,26 +163,39 @@
 
         <!-- Proyecto 1 -->
         <div class="project-card">
-            <h3 class="project-title">Sistema Autónomo de Gestión Deportiva</h3>
-            <div class="project-grid">
-                <div class="project-item">
-                    <strong>El Problema</strong>
-                    Pérdida de ingresos por seguimiento manual de cuotas vencidas y dependencia de sistemas en la nube inestables.
-                </div>
-                <div class="project-item">
-                    <strong>La Solución</strong>
-                    Software de escritorio robusto y sin dependencia de internet que gestiona socios, controla accesos y alerta sobre pagos atrasados.
-                </div>
-                <div class="project-item">
-                    <strong>El Impacto</strong>
-                    Protección del flujo de caja mensual y profesionalización de la recepción del comercio sin costos fijos de servidores.
+            <!-- REEMPLAZA ESTA IMAGEN CON TU CAPTURA -->
+            <img src="img/gym-app.png" alt="Captura de pantalla de la interfaz de gestión de socios, resaltada en amarillo y negro" class="project-image">
+            <div class="project-content">
+                <h3 class="project-title">Sistema Autónomo de Gestión Deportiva</h3>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <strong>El Problema</strong>
+                        Pérdida de ingresos por seguimiento manual de cuotas vencidas y dependencia de sistemas en la nube inestables.
+                    </div>
+                    <div class="project-item">
+                        <strong>La Solución</strong>
+                        Software de escritorio robusto (Electron/SQLite) sin dependencia de internet que gestiona socios, controla accesos y alerta sobre pagos atrasados.
+                    </div>
+                    <div class="project-item">
+                        <strong>El Impacto</strong>
+                        Protección del flujo de caja mensual y profesionalización de la recepción del comercio sin costos fijos de servidores.
+                    </div>
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title">Arquitectura y Tecnologías</h2>
+        <div class="skills-container">
+            <div class="skill-tag">Lógica Backend & Spring Boot</div>
+            <div class="skill-tag">Bases de Datos Relacionales (SQL)</div>
+            <div class="skill-tag">Mapeo Objeto-Relacional (ORM)</div>
+            <div class="skill-tag">Desarrollo de Apps Nativas (Electron)</div>
+        </div>
+
         <div class="cta-section">
             <h2>¿Tienes un proceso manual que te hace perder tiempo y dinero?</h2>
             <p>Cuéntame cómo funciona tu negocio y analicemos si el software puede resolverlo.</p>
-            <a href="https://wa.me/542634781905" class="cta-button" target="_blank">Contactar por WhatsApp</a>
+            <a href="https://wa.me/TUNUMERODEWHATSAPP" class="cta-button" target="_blank">Contactar por WhatsApp</a>
         </div>
     </div>
 
