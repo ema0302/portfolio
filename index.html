@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ema | Soluciones de Software</title>
+    <style>
+        :root {
+            --primary: #FFCC00; /* Tono amarillo para mantener la identidad de tu app */
+            --dark: #1A1A1A;
+            --light: #F4F4F4;
+            --text-gray: #666;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: var(--dark);
+            color: white;
+            border-bottom: 5px solid var(--primary);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .hero-text {
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin: 3rem 0 2rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            margin: 10px auto 0;
+        }
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+        }
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        .project-item strong {
+            display: block;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .skill-tag {
+            background: var(--dark);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .cta-section {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: var(--primary);
+            border-radius: 8px;
+        }
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: transform 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+        @media (min-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Ema</h1>
+            <div class="subtitle">Creador de Soluciones de Software</div>
+            <p class="hero-text">Transformo cuellos de botella administrativos y procesos manuales en sistemas automatizados para que tu negocio ahorre tiempo y escale sus ventas.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Soluciones Implementadas</h2>
+
+        <!-- Proyecto 1 -->
+        <div class="project-card">
+            <h3 class="project-title">Sistema Autónomo de Gestión Deportiva</h3>
+            <div class="project-grid">
+                <div class="project-item">
+                    <strong>El Problema</strong>
+                    Pérdida de ingresos por seguimiento manual de cuotas vencidas y dependencia de sistemas en la nube inestables.
+                </div>
+                <div class="project-item">
+                    <strong>La Solución</strong>
+                    Software de escritorio robusto y sin dependencia de internet que gestiona socios, controla accesos y alerta sobre pagos atrasados.
+                </div>
+                <div class="project-item">
+                    <strong>El Impacto</strong>
+                    Protección del flujo de caja mensual y profesionalización de la recepción del comercio sin costos fijos de servidores.
+                </div>
+            </div>
+        </div>
+        <div class="cta-section">
+            <h2>¿Tienes un proceso manual que te hace perder tiempo y dinero?</h2>
+            <p>Cuéntame cómo funciona tu negocio y analicemos si el software puede resolverlo.</p>
+            <a href="https://wa.me/542634781905" class="cta-button" target="_blank">Contactar por WhatsApp</a>
+        </div>
+    </div>
+
+</body>
+</html>
