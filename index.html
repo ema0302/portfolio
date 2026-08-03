@@ -76,9 +76,15 @@
         .project-image {
             width: 100%;
             height: 250px; /* Altura sugerida para capturas */
-            object-fit: cover; /* Ajusta la imagen sin deformarla */
+            
+            /* ¡ESTA ES LA CORRECCIÓN CLAVE! */
+            object-fit: contain; /* Ajusta la imagen entera sin recortar */
+            
             display: block;
             border-bottom: 1px solid #ddd;
+            
+            /* Fondo oscuro para que la captura oscura no resalte si hay espacio */
+            background-color: #111; 
         }
         .project-content {
             padding: 2rem;
