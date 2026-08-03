@@ -6,7 +6,7 @@
     <title>Ema | Soluciones de Software</title>
     <style>
         :root {
-            --primary: #FFCC00; /* Tono amarillo característico */
+            --primary: #FFCC00;
             --dark: #1A1A1A;
             --light: #F4F4F4;
             --text-gray: #666;
@@ -73,14 +73,15 @@
             overflow: hidden; 
             border-left: 4px solid var(--primary);
         }
+        
+        /* CORRECCIÓN APLICADA AQUÍ */
         .project-image {
             width: 100%;
-            height: 250px; 
-            object-fit: contain; /* Ajusta la imagen entera sin recortar */
+            height: auto; /* Permite que la imagen crezca naturalmente */
             display: block;
             border-bottom: 1px solid #ddd;
-            background-color: #111; 
         }
+        
         .project-content {
             padding: 2rem;
         }
