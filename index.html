@@ -30,26 +30,18 @@
             overflow-x: hidden;
         }
 
-        /* --- Animaciones Keyframes --- */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-up {
-            animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        /* --- Animaciones al hacer Scroll --- */
+        .animate-on-scroll {
             opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.3s; }
-        .delay-3 { animation-delay: 0.5s; }
+        /* Esta clase se agrega dinámicamente con JavaScript cuando el elemento se ve */
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* --- Layout Principal --- */
         .container {
@@ -117,7 +109,6 @@
             position: relative;
         }
 
-        /* Borde decorativo invisible que aparece en el hover */
         .project-card::before {
             content: '';
             position: absolute;
@@ -272,7 +263,7 @@
 </head>
 <body>
 
-    <header class="animate-up">
+    <header class="animate-on-scroll">
         <div class="container">
             <h1>Emanuel Guevara</h1>
             <div class="subtitle">Creador de Soluciones de Software</div>
@@ -281,10 +272,10 @@
     </header>
 
     <div class="container">
-        <h2 class="section-title animate-up delay-1">Solución Implementada</h2>
+        <h2 class="section-title animate-on-scroll">Solución Implementada</h2>
 
         <!-- Proyecto: Gimnasio -->
-        <div class="project-card animate-up delay-1">
+        <div class="project-card animate-on-scroll">
             <img src="img/gym-app.png" alt="Captura de pantalla de la interfaz de gestión de socios" class="project-image">
             <div class="project-content">
                 <h3 class="project-title">Sistema Autónomo de Gestión Deportiva</h3>
@@ -305,20 +296,47 @@
             </div>
         </div>
 
-        <h2 class="section-title animate-up delay-2">Arquitectura y Tecnologías</h2>
-        <div class="skills-container animate-up delay-2">
+        <h2 class="section-title animate-on-scroll">Arquitectura y Tecnologías</h2>
+        <div class="skills-container animate-on-scroll">
             <div class="skill-tag">Lógica Backend & Spring Boot</div>
             <div class="skill-tag">Bases de Datos Relacionales (SQL)</div>
             <div class="skill-tag">Mapeo Objeto-Relacional (ORM)</div>
             <div class="skill-tag">Desarrollo de Apps Nativas (Electron)</div>
         </div>
 
-        <div class="cta-section animate-up delay-3">
+        <div class="cta-section animate-on-scroll">
             <h2>¿Tienes un proceso manual que te hace perder tiempo y dinero?</h2>
             <p>Cuéntame cómo funciona tu negocio y analicemos si el software puede resolverlo.</p>
             <a href="https://wa.me/542634781905" class="cta-button" target="_blank">Contactar por WhatsApp</a>
         </div>
     </div>
 
+    <!-- Script para detectar el Scroll y activar las animaciones -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Creamos el "vigilante"
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Si el elemento entra en la pantalla...
+                    if (entry.isIntersecting) {
+                        // Le agregamos la clase "visible" que activa la animación CSS
+                        entry.target.classList.add('visible');
+                        
+                        // Dejamos de vigilarlo para que la animación solo ocurra una vez
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                // El elemento se anima cuando un 15% de él ya es visible en pantalla
+                threshold: 0.15 
+            });
+
+            // Buscamos todos los elementos con la clase 'animate-on-scroll' y los ponemos bajo vigilancia
+            const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+            elementsToAnimate.forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
