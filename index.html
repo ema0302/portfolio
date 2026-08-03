@@ -37,7 +37,6 @@
             transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        /* Esta clase se agrega dinámicamente con JavaScript cuando el elemento se ve */
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
@@ -104,7 +103,7 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             overflow: hidden;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             transition: all 0.4s ease;
             position: relative;
         }
@@ -272,9 +271,9 @@
     </header>
 
     <div class="container">
-        <h2 class="section-title animate-on-scroll">Solución Implementada</h2>
+        <h2 class="section-title animate-on-scroll">Soluciones Implementadas</h2>
 
-        <!-- Proyecto: Gimnasio -->
+        <!-- Proyecto 1: Gimnasio -->
         <div class="project-card animate-on-scroll">
             <img src="img/gym-app.png" alt="Captura de pantalla de la interfaz de gestión de socios" class="project-image">
             <div class="project-content">
@@ -291,6 +290,29 @@
                     <div class="project-item">
                         <strong>El Impacto</strong>
                         Protección del flujo de caja mensual y profesionalización de la recepción del comercio sin costos fijos de servidores.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proyecto 2: Facturación -->
+        <div class="project-card animate-on-scroll">
+            <!-- REEMPLAZA ESTA IMAGEN CON TU CAPTURA -->
+            <img src="img/facturas-app.png" alt="Captura de pantalla del sistema de facturación en modo oscuro" class="project-image">
+            <div class="project-content">
+                <h3 class="project-title">Sistema Ágil de Facturación y Órdenes de Compra</h3>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <strong>El Problema</strong>
+                        Pérdida de tiempo al buscar historiales de ventas, lentitud para armar comprobantes manualmente y dificultad para mantener una imagen comercial consistente.
+                    </div>
+                    <div class="project-item">
+                        <strong>La Solución</strong>
+                        Moderno sistema de escritorio en modo oscuro que filtra registros en tiempo real y automatiza la generación de documentos estructurados (PDF/Impresión) con logotipo empresarial.
+                    </div>
+                    <div class="project-item">
+                        <strong>El Impacto</strong>
+                        Optimización total del flujo de trabajo diario. El comercio recupera información al instante y entrega facturas elegantes, proyectando una imagen corporativa altamente profesional.
                     </div>
                 </div>
             </div>
@@ -314,24 +336,17 @@
     <!-- Script para detectar el Scroll y activar las animaciones -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Creamos el "vigilante"
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    // Si el elemento entra en la pantalla...
                     if (entry.isIntersecting) {
-                        // Le agregamos la clase "visible" que activa la animación CSS
                         entry.target.classList.add('visible');
-                        
-                        // Dejamos de vigilarlo para que la animación solo ocurra una vez
                         observer.unobserve(entry.target);
                     }
                 });
             }, {
-                // El elemento se anima cuando un 15% de él ya es visible en pantalla
                 threshold: 0.15 
             });
 
-            // Buscamos todos los elementos con la clase 'animate-on-scroll' y los ponemos bajo vigilancia
             const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
             elementsToAnimate.forEach((el) => {
                 observer.observe(el);
