@@ -6,9 +6,9 @@
     <title>RegemTech | Soluciones de Software</title>
     <style>
         :root {
-            --primary: #00b4d8; /* Azul tirando a celeste */
-            --primary-hover: #0096c7; /* Un tono levemente más oscuro para cuando pasas el mouse */
-            --primary-glow: rgba(0, 180, 216, 0.2); /* El resplandor en color celeste */
+            --primary: #00b4d8; 
+            --primary-hover: #0096c7; 
+            --primary-glow: rgba(0, 180, 216, 0.2); 
             --text-main: #e6edf3;
             --text-muted: #a1aab5;
             --border-glass: rgba(255, 255, 255, 0.1);
@@ -23,13 +23,23 @@
 
         body {
             background-color: #0a0c10;
-            background-image: linear-gradient(rgba(10, 12, 16, 0.75), rgba(10, 12, 16, 0.95)), url('img/fondo.jfif');
-            background-size: cover; 
-            background-position: top center; 
-            background-repeat: no-repeat;
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* --- Capa de Fondo Fija --- */
+        .background-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background-image: linear-gradient(rgba(10, 12, 16, 0.75), rgba(10, 12, 16, 0.95)), url('img/image_3c14bd.jfif');
+            background-size: cover; 
+            background-position: top center; 
+            background-repeat: no-repeat;
         }
 
         /* --- Animaciones al hacer Scroll --- */
@@ -60,7 +70,6 @@
             border-bottom: 1px solid var(--border-glass);
         }
 
-        /* Estilos específicos para tu nuevo logo */
         .logo-img {
             max-width: 280px; 
             height: auto;
@@ -278,10 +287,11 @@
     </style>
 </head>
 <body>
+    
+    <div class="background-layer"></div>
 
     <header class="animate-on-scroll">
         <div class="container">
-            <!-- AQUÍ ESTÁ TU NUEVO LOGO -->
             <img src="img/regemlogo.png" alt="RegemTech Logo" class="logo-img">
             
             <div class="subtitle">Creadores de Soluciones de Software</div>
@@ -292,7 +302,6 @@
     <div class="container">
         <h2 class="section-title animate-on-scroll">Soluciones Implementadas</h2>
 
-        <!-- Proyecto 1: Gimnasio -->
         <div class="project-card animate-on-scroll">
             <img src="img/gym-app.png" alt="Captura de pantalla de la interfaz de gestión de socios" class="project-image">
             <div class="project-content">
@@ -314,7 +323,6 @@
             </div>
         </div>
 
-        <!-- Proyecto 2: Facturación -->
         <div class="project-card animate-on-scroll">
             <img src="img/facturas-app.png" alt="Captura de pantalla del sistema de facturación en modo oscuro" class="project-image">
             <div class="project-content">
@@ -351,7 +359,6 @@
         </div>
     </div>
 
-    <!-- Script para detectar el Scroll y activar las animaciones -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
